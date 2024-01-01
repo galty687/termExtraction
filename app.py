@@ -1,10 +1,9 @@
 import streamlit as st
 import openai
-from dotenv import load_dotenv
 import os
 
 load_dotenv()  # 加载 .env 文件
-openai_api_key = os.getenv('OPENAI_API_KEY')
+openai_api_key = st.secrets["openai_api_key"]
 
 
 st.title('术语提取')
