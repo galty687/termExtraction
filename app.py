@@ -4,7 +4,7 @@ import os
 
 
 
-openai_api_key = st.secrets["openai_api_key"]
+OPENAI_API_KEY = st.secrets["openai_api_key"]
 
 
 st.title('术语提取')
