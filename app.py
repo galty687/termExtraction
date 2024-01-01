@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 import os
 
-load_dotenv()  # 加载 .env 文件
+
 openai_api_key = st.secrets["openai_api_key"]
 
 
