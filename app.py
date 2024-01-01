@@ -1,10 +1,9 @@
 import streamlit as st
-import openai
+from openai import OpenAI
 import os
 
-
 openai_api_key = st.secrets["openai_api_key"]
-
+cliet = OpenAI(openai_api_key)
 
 st.title('术语提取')
 st.write('这是一个文本提取系统，基于ChatGLM开发')
@@ -20,7 +19,7 @@ combined_input = f"{prompt}\n\n{input_text}"
 def process_with_openai(text):
     try:
         # 使用 OpenAI 聊天模型进行处理
-        response = openai.ChatCompletion.create(
+        response = client.chat.completion.create(
             model="gpt-3.5-turbo-16k",  # 模型名称
             messages=[
                 {"role": "user", "content": text}
